@@ -8,7 +8,7 @@ This question : ![NL request](app/img/natural_question.png)
 
 Becomes this query : ![DB query](app/img/db_query.png)
 
-This work has been realised during Contrib' Days at [Linkvalue](www.link-value.fr/fr). 
+This work has been realised during Contrib' Days at [Linkvalue](https://www.link-value.fr/fr). 
 
 You can find [here](https://blog.link-value.fr/d%C3%A9velopper-un-chatbot-en-python-3a8b0e518df5) an article in French to explain our first approach.
 
