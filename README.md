@@ -37,6 +37,10 @@ chmod +x install.sh
 
 Run `python .`
 
+And now you can test the bot in French :
+
+![Terminal Version for BotValue](app/img/terminal.png)
+
 ### Web Version
 
 Run `python . --web-app` and go to `localhost:5000`
