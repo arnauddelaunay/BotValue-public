@@ -1,0 +1,69 @@
+{
+    "database": [
+        {
+            "date": " 6 octobre",
+            "hobbies": [
+                "php",
+                "jeux de plateau",
+                "symfony",
+                "jeuxvidéos",
+                "algorithmique"
+            ],
+            "metier": "web developer",
+            "nom": "jean-pascal",
+            "ville": "paris"
+        },
+        {
+            "date": " 21 avril",
+            "hobbies": [
+                "sports extremes",
+                "musique",
+                "foot",
+                "voyager"
+            ],
+            "metier": "business dev",
+            "nom": "jean-alain",
+            "ville": "paris"
+        },
+        {
+            "date": "9 septembre",
+            "hobbies": [
+                "rugby",
+                "course à pied",
+                "voile",
+                "machine learning",
+                "entrepreneuriat",
+                "nouvelles technos"
+            ],
+            "metier": "data scientist",
+            "nom": "arnaud",
+            "ville": "paris"
+        },
+        {
+            "date": " 14 avril",
+            "hobbies": [
+                "recrutement",
+                "cuisine",
+                "voyages",
+                "lecture",
+                "jeux",
+                "gestion de projet"
+            ],
+            "metier": "RH",
+            "nom": "jacky",
+            "ville": "lille"
+        },
+        {
+            "date": "21 septembre",
+            "hobbies": [
+                "javascript",
+                "voyages",
+                "esports",
+                "musique"
+            ],
+            "metier": "web developer",
+            "nom": "michel",
+            "ville": "lyon"
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+	"database":
+		{
+			"metier": [
+				"metier",
+				"job", 
+				"fait",
+				"que fait"
+			],
+			"nom": [
+				"nom",
+				"s'appelle", 
+				"qui"
+			],
+			"ville": [
+				"ville",
+				"ou", 
+				"d'ou",
+				"partie"
+			],
+			"hobbies": [
+				"hobbies",
+				"hobby", 
+				"skill",
+				"skills",
+				"talent"
+			],
+			"date": [
+				"date",
+				"anniversaire", 
+				"quand"
+			]
+		}
+}

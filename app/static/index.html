@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BotValue</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        body {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="jumbotron">
+                <h1>BotValue</h1>
+                <form id="chat-request-form">
+                    <div class="form-group">
+                        <label for="chat-request-message">Your message to the bot</label>
+                        <input type="text" class="form-control" id="chat-request-message" placeholder="Send a message to bot...">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="chat-response-container" class="col-xs-12">
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/markdown.js/0.5.0/markdown.min.js"></script>
+
+<script title="text/javascript">
+    $(document).ready(function() {
+        var chatResponseContainer = $('#chat-response-container');
+        var chatRequestMessage = $('#chat-request-message');
+
+        var chatResponseTemplate = '<div class="jumbotron"><h1>__request__</h1><p>__response__</p></div>';
+
+        function renderResponse(request, response) {
+            chatResponseContainer.html('');
+            var content = $(chatResponseTemplate.replace('__request__', request).replace('__response__', response));
+            chatResponseContainer.append(content);
+        }
+
+        function loadResponse(request) {
+            // Define here how to request the Chat Bot API
+            // The variable « request » contains the user message to send to bot
+            // Do not forget to change the property name of the bot response at 2nd argument of the « renderResponse » call
+            $.ajax({
+                type: 'POST',
+                url: '/chatbot',
+                data : {'data' : request},
+                success: function(res) {
+                    renderResponse(request, markdown.toHTML(res.response || 'salut ça va ?'));
+                }
+            });
+        }
+
+        $('#chat-request-form').submit(function(e) {
+            e.preventDefault();
+            loadResponse(chatRequestMessage.val());
+            chatRequestMessage.val('');
+        });
+
+    });
+</script>
+
+</body>
+</html>
